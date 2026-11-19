@@ -1,0 +1,405 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/implicit_animation_detail.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { Alignment, AnimatedContainer, AnimatedCrossFade, AnimatedOpacity, AnimatedRotation, AnimatedScale, AnimatedSize, AnimatedSlide, AnimatedSwitcher, Border, BorderRadius, BoxDecoration, Center, Colors, Column, Container, CrossAxisAlignment, CrossFadeState, Curves, Divider, Duration, EdgeInsets, Expanded, FontWeight, MainAxisAlignment, Offset, Row, SizedBox, StatefulWidget, Text, TextButton, TextStyle, ValueKey } from '../flutter.js';
+
+// 组件 ImplicitAnimationDetail
+export class ImplicitAnimationDetail extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._big = false;
+    this._visible = true;
+    this._moved = false;
+    this._sizeExpanded = false;
+    this._slowSize = false;
+    this._switchIndex = 0;
+  }
+  build(context) {
+    return new Column({
+      "crossAxisAlignment": CrossAxisAlignment.stretch,
+      "children": [
+        (this.__k0 || (this.__k0 = new Text({
+          "data": "AnimatedContainer · 尺寸 / 颜色 / 圆角",
+          "style": new TextStyle({
+            "fontSize": 16,
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new Center({
+          "child": new AnimatedContainer({
+            "duration": (this.__k2 || (this.__k2 = new Duration({
+              "milliseconds": 500
+            }))),
+            "curve": Curves.easeInOut,
+            "width": this._big ? 220 : 110,
+            "height": this._big ? 120 : 56,
+            "alignment": Alignment.center,
+            "decoration": new BoxDecoration({
+              "color": this._big ? Colors.deepPurple : Colors.teal,
+              "borderRadius": BorderRadius.circular({
+                "radius": 20
+              })
+            }),
+            "child": new Text({
+              "style": (this.__k3 || (this.__k3 = new TextStyle({
+                "color": Colors.white,
+                "fontWeight": FontWeight.w700
+              }))),
+              "data": this._big ? "BIG" : "small"
+            })
+          })
+        }),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new TextButton({
+          "onPressed": () => { this.setState(() => {
+              this._big = (!this._big);
+            }); },
+          "child": new Text({
+            "data": this._big ? "收缩到 small" : "放大到 BIG"
+          })
+        }),
+        (this.__k4 || (this.__k4 = new Divider({}))),
+        (this.__k5 || (this.__k5 = new Text({
+          "data": "AnimatedOpacity · AnimatedScale · AnimatedRotation · AnimatedSlide",
+          "style": new TextStyle({
+            "fontSize": 16,
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new Row({
+          "mainAxisAlignment": MainAxisAlignment.spaceAround,
+          "children": [
+            new AnimatedOpacity({
+              "opacity": this._visible ? 1.0 : 0.2,
+              "duration": (this.__k6 || (this.__k6 = new Duration({
+                "milliseconds": 400
+              }))),
+              "curve": Curves.easeOut,
+              "child": new Container({
+                "width": 56,
+                "height": 56,
+                "alignment": Alignment.center,
+                "decoration": new BoxDecoration({
+                  "color": Colors.orange,
+                  "borderRadius": BorderRadius.circular({
+                    "radius": 12
+                  })
+                }),
+                "child": (this.__k7 || (this.__k7 = new Text({
+                  "data": "透明度",
+                  "style": new TextStyle({
+                    "color": Colors.white,
+                    "fontSize": 11
+                  })
+                })))
+              })
+            }),
+            new AnimatedScale({
+              "scale": this._big ? 1.3 : 1.0,
+              "duration": (this.__k6 || (this.__k6 = new Duration({
+                "milliseconds": 400
+              }))),
+              "curve": Curves.easeInOut,
+              "child": new Container({
+                "width": 56,
+                "height": 56,
+                "alignment": Alignment.center,
+                "decoration": new BoxDecoration({
+                  "color": Colors.indigo,
+                  "borderRadius": BorderRadius.circular({
+                    "radius": 12
+                  })
+                }),
+                "child": (this.__k8 || (this.__k8 = new Text({
+                  "data": "缩放",
+                  "style": new TextStyle({
+                    "color": Colors.white,
+                    "fontSize": 11
+                  })
+                })))
+              })
+            }),
+            new AnimatedRotation({
+              "turns": this._moved ? 0.25 : 0.0,
+              "duration": (this.__k6 || (this.__k6 = new Duration({
+                "milliseconds": 400
+              }))),
+              "curve": Curves.easeInOut,
+              "child": new Container({
+                "width": 56,
+                "height": 56,
+                "alignment": Alignment.center,
+                "decoration": new BoxDecoration({
+                  "color": Colors.pink,
+                  "borderRadius": BorderRadius.circular({
+                    "radius": 12
+                  })
+                }),
+                "child": (this.__k9 || (this.__k9 = new Text({
+                  "data": "旋转",
+                  "style": new TextStyle({
+                    "color": Colors.white,
+                    "fontSize": 11
+                  })
+                })))
+              })
+            }),
+            new AnimatedSlide({
+              "offset": this._moved ? (this.__k10 || (this.__k10 = new Offset({
+                "dx": 0.25,
+                "dy": 0
+              }))) : (this.__k11 || (this.__k11 = new Offset({
+                "dx": 0,
+                "dy": 0
+              }))),
+              "duration": (this.__k6 || (this.__k6 = new Duration({
+                "milliseconds": 400
+              }))),
+              "curve": Curves.easeInOut,
+              "child": new Container({
+                "width": 56,
+                "height": 56,
+                "alignment": Alignment.center,
+                "decoration": new BoxDecoration({
+                  "color": Colors.brown,
+                  "borderRadius": BorderRadius.circular({
+                    "radius": 12
+                  })
+                }),
+                "child": (this.__k12 || (this.__k12 = new Text({
+                  "data": "位移",
+                  "style": new TextStyle({
+                    "color": Colors.white,
+                    "fontSize": 11
+                  })
+                })))
+              })
+            })
+          ]
+        }),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new Row({
+          "children": [
+            new Expanded({
+              "child": new TextButton({
+                "onPressed": () => { this.setState(() => {
+                    this._visible = (!this._visible);
+                  }); },
+                "child": new Text({
+                  "data": this._visible ? "暗下来" : "亮起来"
+                })
+              })
+            }),
+            new Expanded({
+              "child": new TextButton({
+                "onPressed": () => { this.setState(() => {
+                    this._moved = (!this._moved);
+                  }); },
+                "child": new Text({
+                  "data": this._moved ? "回到原位" : "旋转 + 位移"
+                })
+              })
+            })
+          ]
+        }),
+        (this.__k4 || (this.__k4 = new Divider({}))),
+        (this.__k13 || (this.__k13 = new Text({
+          "data": "AnimatedCrossFade · 两子树交叉淡入淡出",
+          "style": new TextStyle({
+            "fontSize": 16,
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new AnimatedCrossFade({
+          "duration": (this.__k14 || (this.__k14 = new Duration({
+            "milliseconds": 450
+          }))),
+          "crossFadeState": this._visible ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          "firstCurve": Curves.easeOut,
+          "secondCurve": Curves.easeIn,
+          "alignment": Alignment.center,
+          "firstChild": new Container({
+            "width": 80,
+            "height": 80,
+            "alignment": Alignment.center,
+            "decoration": new BoxDecoration({
+              "color": Colors.green,
+              "borderRadius": BorderRadius.circular({
+                "radius": 12
+              })
+            }),
+            "child": (this.__k15 || (this.__k15 = new Text({
+              "data": "A",
+              "style": new TextStyle({
+                "color": Colors.white
+              })
+            })))
+          }),
+          "secondChild": new Container({
+            "width": 80,
+            "height": 80,
+            "alignment": Alignment.center,
+            "decoration": new BoxDecoration({
+              "color": Colors.red,
+              "borderRadius": BorderRadius.circular({
+                "radius": 12
+              })
+            }),
+            "child": (this.__k16 || (this.__k16 = new Text({
+              "data": "B",
+              "style": new TextStyle({
+                "color": Colors.white
+              })
+            })))
+          })
+        }),
+        new TextButton({
+          "onPressed": () => { this.setState(() => {
+              this._visible = (!this._visible);
+            }); },
+          "child": new Text({
+            "data": this._visible ? "切到 B" : "切回 A"
+          })
+        }),
+        (this.__k4 || (this.__k4 = new Divider({}))),
+        (this.__k17 || (this.__k17 = new Text({
+          "data": "AnimatedSize · 子组件尺寸变化时自动补间",
+          "style": new TextStyle({
+            "fontSize": 16,
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new Center({
+          "child": new Container({
+            "padding": (this.__k18 || (this.__k18 = EdgeInsets.all({
+              "value": 12
+            }))),
+            "decoration": new BoxDecoration({
+              "color": Colors.blueGrey.shade50,
+              "borderRadius": BorderRadius.circular({
+                "radius": 16
+              }),
+              "border": Border.all({
+                "color": Colors.blueGrey.shade200
+              })
+            }),
+            "child": new AnimatedSize({
+              "duration": new Duration({
+                "milliseconds": this._slowSize ? 1200 : 300
+              }),
+              "curve": Curves.easeInOut,
+              "alignment": Alignment.center,
+              "child": new Container({
+                "width": this._sizeExpanded ? 240 : 120,
+                "height": this._sizeExpanded ? 120 : 56,
+                "alignment": Alignment.center,
+                "decoration": new BoxDecoration({
+                  "color": this._sizeExpanded ? Colors.deepPurple : Colors.teal,
+                  "borderRadius": BorderRadius.circular({
+                    "radius": 14
+                  })
+                }),
+                "child": new Text({
+                  "style": (this.__k19 || (this.__k19 = new TextStyle({
+                    "color": Colors.white,
+                    "fontWeight": FontWeight.w600
+                  }))),
+                  "data": this._sizeExpanded ? "已展开" : "已收起"
+                })
+              })
+            })
+          })
+        }),
+        new Row({
+          "children": [
+            new Expanded({
+              "child": new TextButton({
+                "onPressed": () => { this.setState(() => {
+                    this._sizeExpanded = (!this._sizeExpanded);
+                  }); },
+                "child": new Text({
+                  "data": this._sizeExpanded ? "收起尺寸" : "展开尺寸"
+                })
+              })
+            }),
+            new Expanded({
+              "child": new TextButton({
+                "onPressed": () => { this.setState(() => {
+                    this._slowSize = (!this._slowSize);
+                  }); },
+                "child": new Text({
+                  "data": this._slowSize ? "时长切回 300ms" : "时长切到 1200ms"
+                })
+              })
+            })
+          ]
+        }),
+        (this.__k4 || (this.__k4 = new Divider({}))),
+        (this.__k20 || (this.__k20 = new Text({
+          "data": "AnimatedSwitcher · 子组件切换淡入淡出",
+          "style": new TextStyle({
+            "fontSize": 16,
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 10
+        }))),
+        new Center({
+          "child": new AnimatedSwitcher({
+            "duration": (this.__k14 || (this.__k14 = new Duration({
+              "milliseconds": 450
+            }))),
+            "switchInCurve": Curves.easeOut,
+            "switchOutCurve": Curves.easeIn,
+            "child": new Container({
+              "width": 160,
+              "height": 90,
+              "alignment": Alignment.center,
+              "decoration": new BoxDecoration({
+                "color": this._switchIndex.isEven ? Colors.indigo : Colors.orange,
+                "borderRadius": BorderRadius.circular({
+                  "radius": 14
+                })
+              }),
+              "child": new Text({
+                "style": (this.__k19 || (this.__k19 = new TextStyle({
+                  "color": Colors.white,
+                  "fontWeight": FontWeight.w600
+                }))),
+                "data": "卡片 " + (this._switchIndex + 1)
+              }),
+              "key": new ValueKey({value: this._switchIndex})
+            })
+          })
+        }),
+        new TextButton({
+          "onPressed": () => { this.setState(() => {
+              this._switchIndex++;
+            }); },
+          "child": (this.__k21 || (this.__k21 = new Text({
+            "data": "切换子组件（带 ValueKey）"
+          })))
+        })
+      ]
+    });
+  }
+}
+

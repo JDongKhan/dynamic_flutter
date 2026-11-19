@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/banner_component.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { PanelColors } from 'hello_component.js';
+import { Column, ElevatedButton, StatefulWidget, Text, TextStyle } from '../flutter.js';
+
+// 组件 BannerCard
+export class BannerCard extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._views = 0;
+  }
+  initState() {
+    super.initState();
+    this._views = 5;
+  }
+  bump() {
+    this.setState(() => {
+      this._views++;
+    });
+  }
+  build(context) {
+    return new Column({
+      "children": [
+        new Text({
+          "style": new TextStyle({
+            "fontSize": 20,
+            "color": PanelColors.background
+          }),
+          "data": "Banner from another file"
+        }),
+        new Text({
+          "data": "views = " + this._views
+        }),
+        new ElevatedButton({
+          "onPressed": () => this.bump(),
+          "child": (this.__k0 || (this.__k0 = new Text({
+            "data": "Bump"
+          })))
+        })
+      ]
+    });
+  }
+}
+

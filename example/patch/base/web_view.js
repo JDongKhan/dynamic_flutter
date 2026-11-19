@@ -1,0 +1,15 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/base/web_view.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import '../flutter.js';
+
+// 模型 WebView
+export class WebView {
+  constructor() {
+  }
+  static async open(url, title) {
+    return _app_host_.invoke("open", Array.prototype.slice.call(arguments));
+  }
+}
+

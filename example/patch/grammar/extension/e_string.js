@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/grammar/extension/e_string.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { Estrange } from 'estrange.js';
+import { TestString3 } from 'e_string3.js';
+
+// 扩展 TestString1
+export const TestString1 = registerExtension("String", (function () {
+  "use strict";
+  return {
+    log1: function () {
+      print("项目内日志1");
+      "3".log3();
+      new Estrange().log();
+    },
+  };
+})(), { id: "lib/grammar/extension/e_string.dart#TestString1" });
+

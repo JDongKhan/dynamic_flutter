@@ -1,0 +1,126 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/safe_area_detail.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { Alignment, BorderRadius, BoxDecoration, Colors, Column, Container, CrossAxisAlignment, EdgeInsets, FontWeight, MediaQuery, Radius, Row, SafeArea, SizedBox, StatefulWidget, Switch, Text, TextStyle, double } from '../flutter.js';
+
+// 组件 SafeAreaDetail
+export class SafeAreaDetail extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._enabled = true;
+  }
+  build(context) {
+    const padding = MediaQuery.paddingOf(context);
+    return new Column({
+      "crossAxisAlignment": CrossAxisAlignment.start,
+      "children": [
+        (this.__k0 || (this.__k0 = new Text({
+          "data": "SafeArea",
+          "style": new TextStyle({
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 4
+        }))),
+        (this.__k2 || (this.__k2 = new Text({
+          "data": "系统安全区 padding 全为 0 时 SafeArea 默认无可见间距；用 minimum 强制留白即可验证生效",
+          "style": new TextStyle({
+            "fontSize": 12,
+            "color": Colors.black54
+          })
+        }))),
+        (this.__k3 || (this.__k3 = new SizedBox({
+          "height": 10
+        }))),
+        new Row({
+          "children": [
+            (this.__k4 || (this.__k4 = new Text({
+              "data": "minimum 留白",
+              "style": new TextStyle({
+                "fontSize": 12
+              })
+            }))),
+            new Switch({
+              "value": this._enabled,
+              "onChanged": (v) => { this.setState(() => {
+                  this._enabled = v;
+                }); }
+            })
+          ]
+        }),
+        (this.__k5 || (this.__k5 = new SizedBox({
+          "height": 6
+        }))),
+        new Container({
+          "color": Colors.grey.shade300,
+          "child": new SafeArea({
+            "left": true,
+            "top": true,
+            "right": true,
+            "bottom": true,
+            "minimum": this._enabled ? EdgeInsets.only({
+              "top": 12,
+              "bottom": 12,
+              "left": 12,
+              "right": 12
+            }) : EdgeInsets.zero,
+            "maintainBottomViewPadding": false,
+            "child": new Container({
+              "height": 56,
+              "color": Colors.teal,
+              "alignment": Alignment.center,
+              "child": (this.__k6 || (this.__k6 = new Text({
+                "data": "SafeArea 内区域",
+                "style": new TextStyle({
+                  "color": Colors.white,
+                  "fontSize": 13
+                })
+              })))
+            })
+          })
+        }),
+        (this.__k3 || (this.__k3 = new SizedBox({
+          "height": 10
+        }))),
+        new Container({
+          "width": double.infinity,
+          "padding": (this.__k7 || (this.__k7 = EdgeInsets.all({
+            "value": 8
+          }))),
+          "decoration": new BoxDecoration({
+            "color": Colors.grey.shade100,
+            "borderRadius": (this.__k8 || (this.__k8 = BorderRadius.all({
+              "radius": Radius.circular({
+                "radius": 6
+              })
+            })))
+          }),
+          "child": new Column({
+            "crossAxisAlignment": CrossAxisAlignment.start,
+            "children": [
+              new Text({
+                "style": (this.__k9 || (this.__k9 = new TextStyle({
+                  "fontSize": 12
+                }))),
+                "data": "padding: L" + padding.left.toStringAsFixed(0) + " T" + padding.top.toStringAsFixed(0) + " " + "R" + padding.right.toStringAsFixed(0) + " B" + padding.bottom.toStringAsFixed(0)
+              }),
+              (this.__k10 || (this.__k10 = new SizedBox({
+                "height": 2
+              }))),
+              new Text({
+                "style": (this.__k11 || (this.__k11 = new TextStyle({
+                  "color": Colors.black54,
+                  "fontSize": 12
+                }))),
+                "data": this._enabled ? "minimum: 每边 12（灰色即为留白）" : "minimum: 0（本机系统 padding 为 0，故无留白）"
+              })
+            ]
+          })
+        })
+      ]
+    });
+  }
+}
+

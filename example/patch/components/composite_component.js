@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/composite_component.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { BannerCard } from 'banner_component.js';
+import { Colors, Column, Component, ElevatedButton, FontWeight, MainAxisSize, SizedBox, StatefulWidget, StatelessWidget, Text, TextStyle } from '../flutter.js';
+
+// 组件 DashboardCard
+export class DashboardCard extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._ticks = 0;
+  }
+  tick() {
+    this.setState(() => {
+      this._ticks++;
+    });
+  }
+  build(context) {
+    return new Column({
+      "children": [
+        new Text({
+          "style": (this.__k0 || (this.__k0 = new TextStyle({
+            "fontSize": 22,
+            "fontWeight": FontWeight.w600
+          }))),
+          "data": "Dashboard (JS)"
+        }),
+        new Text({
+          "data": "ticks = " + this._ticks
+        }),
+        (this.__k1 || (this.__k1 = new BannerCard({}))),
+        (this.__k2 || (this.__k2 = new SizedBox({
+          "height": 12
+        }))),
+        (this.__k3 || (this.__k3 = new _LabeledDivider({
+          "child": new Text({
+            "data": "native child slot"
+          }),
+          "text": "private widget"
+        }))),
+        (this.__k4 || (this.__k4 = new SizedBox({
+          "height": 8
+        }))),
+        (this.__k5 || (this.__k5 = new LabeledDivider({
+          "text": "public widget"
+        }))),
+        (this.__k2 || (this.__k2 = new SizedBox({
+          "height": 12
+        }))),
+        new ElevatedButton({
+          "onPressed": () => this.tick(),
+          "style": ElevatedButton.styleFrom({ "backgroundColor": Colors.orange, "foregroundColor": Colors.white }),
+          "child": (this.__k6 || (this.__k6 = new Text({
+            "data": "Tick"
+          })))
+        })
+      ]
+    });
+  }
+}
+
+// 组件 LabeledDivider
+export class LabeledDivider extends StatelessWidget {
+  constructor(args) {
+    super(args);
+    this.__applyProps(args);
+  }
+  __applyProps(args) {
+    this.text = (args && args.text !== undefined) ? args.text : '';
+    this.child = (args && args.child !== undefined) ? args.child : null;
+  }
+  build(context) {
+    return new Column({
+      "mainAxisSize": MainAxisSize.min,
+      "children": [
+        new Text({
+          "style": (this.__k0 || (this.__k0 = new TextStyle({
+            "color": Colors.blueGrey,
+            "fontSize": 12
+          }))),
+          "data": "★ " + this.text + " ★"
+        }),
+        ...((__nn(this.child) != null) ? [this.child] : [])
+      ]
+    });
+  }
+}
+
+// 原生组件包装 _LabeledDivider（@PatchIgnore(isComponent: true)）
+class _LabeledDivider extends Component {
+  // 宿主包装类：实例**自身**就是宿主元素。类型名直接取类名（`__type.name`）。
+}
+

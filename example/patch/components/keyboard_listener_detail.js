@@ -1,0 +1,217 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/keyboard_listener_detail.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { Alignment, Border, BorderRadius, BoxDecoration, Colors, Column, Container, CrossAxisAlignment, EdgeInsets, FocusNode, FontWeight, KeyDownEvent, KeyRepeatEvent, KeyboardListener, LogicalKeyboardKey, MainAxisSize, OutlinedButton, Radius, Row, SizedBox, StatefulWidget, Text, TextStyle, Wrap } from '../flutter.js';
+
+// 组件 KeyboardListenerDetail
+export class KeyboardListenerDetail extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._node = new FocusNode({debugLabel: "keyboard-listener-demo"});
+    this._row = 1;
+    this._col = 1;
+    this._lit = false;
+    this._down = 0;
+    this._up = 0;
+    this._repeat = 0;
+    this._last = "（还没有按键：点一下面板再按方向键）";
+    this._char = "（无）";
+    this._phys = "（无）";
+  }
+  dispose() {
+    this._node.dispose();
+    super.dispose();
+  }
+  _onKey(event) {
+    const key = event.logicalKey;
+    if ((event instanceof KeyDownEvent)) {
+      this.setState(() => {
+        this._down += 1;
+        this._last = "KeyDown  " + key.keyLabel;
+        this._char = (event.character ?? "（无）");
+        this._phys = (event.physicalKey.debugName ?? "（无）");
+        if ((key === LogicalKeyboardKey.arrowUp)) {
+          this._row = __mod(((this._row + 2)), 3);
+        }
+        if ((key === LogicalKeyboardKey.arrowDown)) {
+          this._row = __mod(((this._row + 1)), 3);
+        }
+        if ((key === LogicalKeyboardKey.arrowLeft)) {
+          this._col = __mod(((this._col + 2)), 3);
+        }
+        if ((key === LogicalKeyboardKey.arrowRight)) {
+          this._col = __mod(((this._col + 1)), 3);
+        }
+        if ((key === LogicalKeyboardKey.space)) {
+          this._lit = (!this._lit);
+        }
+        if ((key === LogicalKeyboardKey.escape)) {
+          this._row = 1;
+          this._col = 1;
+          this._lit = false;
+        }
+      });
+      return;
+    }
+    if ((event instanceof KeyRepeatEvent)) {
+      this.setState(() => {
+        this._repeat += 1;
+      });
+      return;
+    }
+    this.setState(() => {
+      this._up += 1;
+      this._last = "KeyUp  " + key.keyLabel;
+    });
+  }
+  _cell(r, c) {
+    const active = ((r === this._row) && (c === this._col));
+    return new Container({
+      "width": 36,
+      "height": 36,
+      "margin": (this.__k0 || (this.__k0 = EdgeInsets.all({
+        "value": 3
+      }))),
+      "alignment": Alignment.center,
+      "decoration": new BoxDecoration({
+        "color": active ? ((this._lit ? Colors.amber : Colors.deepPurple)) : Colors.grey.shade200,
+        "borderRadius": (this.__k1 || (this.__k1 = BorderRadius.all({
+          "radius": Radius.circular({
+            "radius": 4
+          })
+        })))
+      }),
+      "child": new Text({
+        "style": (this.__k2 || (this.__k2 = new TextStyle({
+          "color": Colors.white,
+          "fontSize": 12
+        }))),
+        "data": active ? "●" : ""
+      })
+    });
+  }
+  _gridRow(r) {
+    return new Row({
+      "mainAxisSize": MainAxisSize.min,
+      "children": [
+        this._cell(r, 0),
+        this._cell(r, 1),
+        this._cell(r, 2)
+      ]
+    });
+  }
+  build(context) {
+    return new Column({
+      "crossAxisAlignment": CrossAxisAlignment.start,
+      "children": [
+        (this.__k3 || (this.__k3 = new Text({
+          "data": "KeyboardListener",
+          "style": new TextStyle({
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k4 || (this.__k4 = new SizedBox({
+          "height": 4
+        }))),
+        (this.__k5 || (this.__k5 = new Text({
+          "data": "方向键移动方块，空格切换颜色，Esc 复位；KeyDown / KeyRepeat / KeyUp 分别计数",
+          "style": new TextStyle({
+            "fontSize": 12,
+            "color": Colors.black54
+          })
+        }))),
+        (this.__k6 || (this.__k6 = new SizedBox({
+          "height": 10
+        }))),
+        new KeyboardListener({
+          "focusNode": this._node,
+          "autofocus": true,
+          "onKeyEvent": (__a0) => this._onKey(__a0),
+          "child": new Container({
+            "padding": (this.__k7 || (this.__k7 = EdgeInsets.all({
+              "value": 10
+            }))),
+            "decoration": new BoxDecoration({
+              "border": Border.all({
+                "color": Colors.grey.shade300
+              }),
+              "borderRadius": (this.__k8 || (this.__k8 = BorderRadius.all({
+                "radius": Radius.circular({
+                  "radius": 8
+                })
+              })))
+            }),
+            "child": new Column({
+              "crossAxisAlignment": CrossAxisAlignment.start,
+              "children": [
+                new Column({
+                  "mainAxisSize": MainAxisSize.min,
+                  "children": [
+                    this._gridRow(0),
+                    this._gridRow(1),
+                    this._gridRow(2)
+                  ]
+                }),
+                (this.__k9 || (this.__k9 = new SizedBox({
+                  "height": 8
+                }))),
+                new Text({
+                  "style": (this.__k10 || (this.__k10 = new TextStyle({
+                    "fontSize": 12
+                  }))),
+                  "data": "最近事件：" + this._last
+                }),
+                new Text({
+                  "style": (this.__k10 || (this.__k10 = new TextStyle({
+                    "fontSize": 12
+                  }))),
+                  "data": "字符 character：" + this._char
+                }),
+                new Text({
+                  "style": (this.__k10 || (this.__k10 = new TextStyle({
+                    "fontSize": 12
+                  }))),
+                  "data": "物理键：" + this._phys
+                }),
+                new Text({
+                  "style": (this.__k11 || (this.__k11 = new TextStyle({
+                    "color": Colors.black54,
+                    "fontSize": 12
+                  }))),
+                  "data": "KeyDown " + this._down + " · KeyRepeat " + this._repeat + " · KeyUp " + this._up
+                })
+              ]
+            })
+          })
+        }),
+        (this.__k6 || (this.__k6 = new SizedBox({
+          "height": 10
+        }))),
+        new Wrap({
+          "spacing": 12,
+          "runSpacing": 8,
+          "children": [
+            new OutlinedButton({
+              "onPressed": () => { return this._node.requestFocus(); },
+              "child": (this.__k12 || (this.__k12 = new Text({
+                "data": "让面板获得焦点"
+              })))
+            }),
+            new OutlinedButton({
+              "onPressed": () => { this.setState(() => {
+                  this._row = 1;
+                  this._col = 1;
+                  this._lit = false;
+                }); },
+              "child": (this.__k13 || (this.__k13 = new Text({
+                "data": "复位方块"
+              })))
+            })
+          ]
+        })
+      ]
+    });
+  }
+}
+

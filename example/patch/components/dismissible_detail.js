@@ -1,0 +1,111 @@
+// GENERATED CODE - DO NOT EDIT
+// 由 dynamic_flutter_generator 从 lib/components/dismissible_detail.dart 自动生成
+// 重新生成：dart run build_runner build
+
+import { Align, Alignment, Colors, Column, Container, CrossAxisAlignment, DismissDirection, Dismissible, EdgeInsets, FontWeight, Icon, Icons, ListTile, OutlinedButton, SizedBox, StatefulWidget, Text, TextStyle, ValueKey } from '../flutter.js';
+
+// 组件 DismissibleDetail
+export class DismissibleDetail extends StatefulWidget {
+  constructor(args) {
+    super(args);
+    this._items = ["第一条：左滑删除，右滑弹回", "第二条：试试右滑，会被拒绝", "第三条：删光后点「重置」"];
+    this._last = "还没有条目被删除";
+  }
+  async _confirm(direction) {
+    return (direction == DismissDirection.endToStart);
+  }
+  _reset() {
+    this.setState(() => {
+      this._items = ["第一条：左滑删除，右滑弹回", "第二条：试试右滑，会被拒绝", "第三条：删光后点「重置」"];
+      this._last = "还没有条目被删除";
+    });
+  }
+  build(context) {
+    return new Column({
+      "crossAxisAlignment": CrossAxisAlignment.stretch,
+      "children": [
+        (this.__k0 || (this.__k0 = new Text({
+          "data": "Dismissible",
+          "style": new TextStyle({
+            "fontWeight": FontWeight.bold
+          })
+        }))),
+        (this.__k1 || (this.__k1 = new SizedBox({
+          "height": 4
+        }))),
+        (this.__k2 || (this.__k2 = new Text({
+          "data": "左滑删除；右滑被 confirmDismiss 拒绝后弹回",
+          "style": new TextStyle({
+            "fontSize": 12,
+            "color": Colors.black54
+          })
+        }))),
+        (this.__k3 || (this.__k3 = new SizedBox({
+          "height": 12
+        }))),
+        ...(() => { var out = []; for (let item of this._items) { out.push.apply(out, [new Dismissible({
+                "direction": DismissDirection.horizontal,
+                "confirmDismiss": (__a0) => this._confirm(__a0),
+                "background": new Container({
+                  "color": Colors.red,
+                  "alignment": Alignment.centerLeft,
+                  "padding": (this.__k4 || (this.__k4 = EdgeInsets.symmetric({
+                    "horizontal": 20
+                  }))),
+                  "child": (this.__k5 || (this.__k5 = new Icon({
+                    "color": Colors.white,
+                    "icon": Icons.delete_outline
+                  })))
+                }),
+                "secondaryBackground": new Container({
+                  "color": Colors.blueGrey,
+                  "alignment": Alignment.centerRight,
+                  "padding": (this.__k4 || (this.__k4 = EdgeInsets.symmetric({
+                    "horizontal": 20
+                  }))),
+                  "child": (this.__k6 || (this.__k6 = new Icon({
+                    "color": Colors.white,
+                    "icon": Icons.block
+                  })))
+                }),
+                "onDismissed": (direction) => { this.setState(() => {
+                    this._items.remove(item);
+                    this._last = "已删除：" + item;
+                  }); },
+                "child": new Container({
+                  "color": Colors.white,
+                  "child": new ListTile({
+                    "title": new Text({
+                      "data": item
+                    })
+                  })
+                }),
+                "key": new ValueKey({value: item, typeArguments: {"T": "String"}})
+              })]); } return out; })(),
+        (this.__k3 || (this.__k3 = new SizedBox({
+          "height": 12
+        }))),
+        new Text({
+          "style": (this.__k7 || (this.__k7 = new TextStyle({
+            "color": Colors.black54,
+            "fontSize": 12
+          }))),
+          "data": this._last
+        }),
+        (this.__k8 || (this.__k8 = new SizedBox({
+          "height": 8
+        }))),
+        new Align({
+          "alignment": Alignment.centerLeft,
+          "child": new OutlinedButton({
+            "onPressed": () => this._reset(),
+            "child": (this.__k9 || (this.__k9 = new Text({
+              "data": "重置"
+            })))
+          })
+        })
+      ]
+    });
+  }
+}
+
