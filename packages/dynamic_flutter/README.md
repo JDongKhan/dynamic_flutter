@@ -1,6 +1,6 @@
 # dynamic_flutter
 
-[简体中文](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter/README_ZH.md)
+[简体中文](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter/README_ZH.md)
 
 Hot update runtime: it loads build-time generated JS patches, where **JS drives the logic**, while rendering
 still happens on the native Flutter side.
@@ -33,7 +33,7 @@ dependencies:
 JS engine baseline: ES2020 + partial ES2021 (iOS 14.5+ / macOS 11+ JSC / Android QuickJS 2021-03-27).
 `Object.hasOwn`, `.at`, `findLast`, `static {}` blocks, top-level `await`, `structuredClone`,
 `WeakRef` are **unavailable** in the engines. See
-[Widget Support Reference §7 (Chinese)](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/组件支持文档.md) for the full baseline.
+[Widget Support Reference §7 (Chinese)](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/组件支持文档.md) for the full baseline.
 
 #### Usage limitations (hard constraints)
 
@@ -51,7 +51,7 @@ JS engine baseline: ES2020 + partial ES2021 (iOS 14.5+ / macOS 11+ JSC / Android
    need `jsWidgetRegistry.register(name, build)`; `Image.memory` / dynamic bytes, `SnackBar`,
    `showMenu` / `showSearch` / date pickers, `RadioGroup`, `Container.transform`, synchronous-return
    callbacks (`DragTarget.onWillAccept*`), `Theme.of(context)` value reads etc. are **not supported**
-   (full list: [Widget Support Reference §6 (Chinese)](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/组件支持文档.md)). Uncovered Dart syntax fails with a
+   (full list: [Widget Support Reference §6 (Chinese)](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/组件支持文档.md)). Uncovered Dart syntax fails with a
    build-time warning instead of a silent fallback. Deprecated Flutter APIs are not supported.
 5. **The patch does not execute arbitrary Dart.** Only statically translated JS runs in the engine;
    no `dart:mirrors` / no dynamic Dart evaluation. Native capabilities must be bridged through
@@ -96,7 +96,7 @@ the query is stripped before the zip/asset is actually fetched. The host widget 
 singleton and cannot be injected from outside.
 
 The generated JS of the example app can be browsed online:
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch).
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch).
 
 ### Architecture
 
@@ -165,7 +165,7 @@ JsLog.enabled = false; // only turns off local printing (default kDebugMode); re
 Dart's `print` / `debugPrint` are translated 1:1 to same-named JS globals and bridged to
 the same exit with levels (`info` / `debug`; `debugPrint` only emits in kDebugMode). The host
 prefixes them with `[js-log] `. For the full level description and typical sources see
-[User Manual §4.3 (Chinese)](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/使用手册.md).
+[User Manual §4.3 (Chinese)](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/使用手册.md).
 
 ### Related packages
 

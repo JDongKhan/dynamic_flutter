@@ -136,7 +136,7 @@
   // 线上预览（html-preview.github.io 等）里相对路径会解析到预览域名下 → 404；
   // 本地 file:// 打开则直接读仓库里的 ../downloads/。这里按运行位置切换基址。
   (function () {
-    var raw = 'https://github.com/JDongKhan/flutter_hot_patch/raw/main/docs/';
+    var raw = 'https://github.com/JDongKhan/dynamic_flutter/raw/main/docs/';
     var isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
     if (isLocal) return;
     document.querySelectorAll('a[data-path]').forEach(function (a) {

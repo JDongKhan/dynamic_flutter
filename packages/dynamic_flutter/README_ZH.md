@@ -1,6 +1,6 @@
 # dynamic_flutter（简体中文）
 
-[English](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter/README.md)
+[English](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter/README.md)
 
 热更新运行时：加载构建期生成的 JS 补丁，**由 JS 驱动逻辑**，渲染仍发生在原生 Flutter 侧。
 
@@ -31,7 +31,7 @@ dependencies:
 JS 引擎基线：ES2020 + 部分 ES2021（iOS 14.5+ / macOS 11+ JSC / Android QuickJS 2021-03-27）。
 引擎**未实现** `Object.hasOwn`、`.at`、`findLast`、`static {}` 块、top-level `await`、
 `structuredClone`、`WeakRef`，产物与运行时均禁止使用。
-完整基线见 [组件支持文档 §7](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/组件支持文档.md)。
+完整基线见 [组件支持文档 §7](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/组件支持文档.md)。
 
 ### 使用限制（硬约束）
 
@@ -46,7 +46,7 @@ JS 引擎基线：ES2020 + 部分 ES2021（iOS 14.5+ / macOS 11+ JSC / Android Q
 4. **渲染受组件 / API 支持矩阵限制**。宿主无 renderer 的 widget 需 `jsWidgetRegistry.register(name, build)`
    注册；`Image.memory` / 动态字节、`SnackBar`、`showMenu` / `showSearch` / 日期选择器、`RadioGroup`、
    `Container.transform`、需同步返回值的回调（`DragTarget.onWillAccept*`）、`Theme.of(context)` 取值等
-   **均不支持**（完整清单见 [组件支持文档 §6](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/组件支持文档.md)）。未覆盖的 Dart 写法
+   **均不支持**（完整清单见 [组件支持文档 §6](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/组件支持文档.md)）。未覆盖的 Dart 写法
    构建期告警，不做静默兜底；Flutter 废弃 API 不支持。
 5. **补丁不执行任意 Dart**。引擎里只跑静态翻译出的 JS，无 `dart:mirrors` / 无动态 Dart 求值；
    原生能力必须经 `@HostInjected` / `registerHostMethod` 桥接（通道调用为异步）。
@@ -85,7 +85,7 @@ JsUiWidget(
 宿主 widget 注册表是进程内单例，不从外部注入。
 
 示例 App 的实际产物（生成的 JS 文件）可在线查看：
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch)。
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch)。
 
 ## 架构
 
@@ -149,7 +149,7 @@ JsLog.enabled = false; // 只关本地打印（默认 kDebugMode），不影响�
 
 Dart 的 `print` / `debugPrint` 在 JS 侧是一比一同名全局函数，桥到同一出口且带级别
 （`info` / `debug`，`debugPrint` 仅 kDebugMode 输出；宿主侧带 `[js-log] ` 前缀）。
-完整级别说明与典型来源见 [使用手册 §4.3](https://github.com/JDongKhan/flutter_hot_patch/blob/main/docs/使用手册.md)。
+完整级别说明与典型来源见 [使用手册 §4.3](https://github.com/JDongKhan/dynamic_flutter/blob/main/docs/使用手册.md)。
 
 ## 相关包
 

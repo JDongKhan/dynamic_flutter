@@ -1,6 +1,6 @@
 # dynamic_flutter_annotations
 
-[简体中文](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter_annotations/README_ZH.md)
+[简体中文](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter_annotations/README_ZH.md)
 
 Declarative annotations that mark a **completely ordinary Flutter widget** as a "dynamically shippable UI component".
 
@@ -169,7 +169,7 @@ Typical use case: most of a component should be hot-patchable, but some capabili
 WebView, a native SDK) can only run on the host.
 
 Browse the JS actually generated for the example app online:
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch).
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch).
 
 ### Related packages
 

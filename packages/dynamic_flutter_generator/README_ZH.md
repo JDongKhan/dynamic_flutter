@@ -1,6 +1,6 @@
 # dynamic_flutter_generator（简体中文）
 
-[English](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter_generator/README.md)
+[English](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter_generator/README.md)
 
 构建期把带 `@PatchEntry` 注解的 Flutter widget **静态翻译**为 JS 模块，
 供 `dynamic_flutter` 运行时热更渲染。
@@ -49,7 +49,7 @@ dart run build_runner build --delete-conflicting-outputs
   `__descriptorOf` 归一化为元素描述。
 
 示例 App 的实际产物（生成的 JS 文件）可在线查看：
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch)。
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch)。
 
 > 注意：Flutter 的目录 asset 声明**不递归**，需在 `pubspec.yaml` 的 `assets:`
 > 里逐目录（或逐文件）显式声明产物路径。

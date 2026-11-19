@@ -1,6 +1,6 @@
 # dynamic_flutter_annotations（简体中文）
 
-[English](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter_annotations/README.md)
+[English](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter_annotations/README.md)
 
 声明式注解包：把一个**完全正常的 Flutter widget** 标记为「可动态下发的 UI 组件」。
 
@@ -154,7 +154,7 @@ JsRuntimeManager.registerHostMethod('myChannel', (String a) => ...);
 适用场景：组件大部分逻辑要热更，但涉及的能力（网络 / 路由 / WebView / 原生 SDK）只能由宿主执行。
 
 示例 App 的实际产物（生成的 JS 文件）可在线查看：
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch)。
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch)。
 
 ## 相关包
 

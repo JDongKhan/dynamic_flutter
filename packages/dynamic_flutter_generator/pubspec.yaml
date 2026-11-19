@@ -4,7 +4,7 @@ version: 0.14.2
 # 属于仓库根的 pub workspace（见根 pubspec.yaml 的 workspace 列表）。
 resolution: workspace
 # pub.dev 溯源信息。
-repository: https://github.com/JDongKhan/flutter_hot_patch
+repository: https://github.com/JDongKhan/dynamic_flutter
 
 environment:
   sdk: ^3.11.5

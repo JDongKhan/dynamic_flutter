@@ -1,6 +1,6 @@
 # dynamic_flutter_generator
 
-[简体中文](https://github.com/JDongKhan/flutter_hot_patch/blob/main/packages/dynamic_flutter_generator/README_ZH.md)
+[简体中文](https://github.com/JDongKhan/dynamic_flutter/blob/main/packages/dynamic_flutter_generator/README_ZH.md)
 
 Translates Flutter widgets annotated with `@PatchEntry` **statically** into JS modules at build time, so the
 `dynamic_flutter` runtime can hot-patch and render them.
@@ -52,7 +52,7 @@ source file names:
   normalized to descriptors by `__descriptorOf`.
 
 Browse the JS actually generated for the example app online:
-[example/patch/](https://github.com/JDongKhan/flutter_hot_patch/tree/main/example/patch).
+[example/patch/](https://github.com/JDongKhan/dynamic_flutter/tree/main/example/patch).
 
 > Note: Flutter's directory asset declaration is **not recursive**, so every output path must be declared
 > explicitly in `pubspec.yaml` under `assets:` (per directory or per file).
