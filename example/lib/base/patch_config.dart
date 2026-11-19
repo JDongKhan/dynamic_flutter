@@ -15,7 +15,7 @@ import 'dev_server.dart';
 ///   [devServerBaseUrl]，由 `bash start_patch_server.sh` 启动）；
 /// - release：GitHub Pages 上的静态包（由 start_patch_server.sh 同步到
 ///   `docs/blog/patch.zip`，随仓库发布到
-///   https://jdongkhan.github.io/flutter_hot_patch/blog/ ）——别人装包后不需要
+///   https://jdongkhan.github.io/dynamic_flutter/blog/ ）——别人装包后不需要
 ///   自己起本地服务。
 /// - 需要指向别处（自己的 CDN / 灰度环境）时用编译期参数覆盖：
 ///   `fvm flutter build apk --dart-define=PATCH_ZIP=https://example.com/patch.zip`
@@ -24,7 +24,7 @@ const String _patchZipOverride = String.fromEnvironment('PATCH_ZIP');
 const String _patchZipLocal = '$devServerBaseUrl/patch/patch.zip';
 
 const String _patchZipPublished =
-    'https://jdongkhan.github.io/flutter_hot_patch/blog/patch.zip';
+    'https://jdongkhan.github.io/dynamic_flutter/blog/patch.zip';
 
 /// 当前生效的补丁 zip 地址。
 String get patchZipUrl {

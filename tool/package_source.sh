@@ -4,12 +4,12 @@
 #
 #   bash tool/package_source.sh
 #
-# 产物：docs/downloads/flutter_hot_patch-source.zip（同名覆盖）。
+# 产物：docs/downloads/dynamic_flutter-source.zip（同名覆盖）。
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-OUT="docs/downloads/flutter_hot_patch-source.zip"
-NAME="flutter_hot_patch"
+OUT="docs/downloads/dynamic_flutter-source.zip"
+NAME="dynamic_flutter"
 mkdir -p docs/downloads
 rm -f "$OUT"
 

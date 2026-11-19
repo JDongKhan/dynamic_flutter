@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>flutter_hot_patch · 一份 Flutter 代码，两种执行形态</title>
-<meta name="description" content="flutter_hot_patch 技术博客：为 Flutter 装上第二个运行时。编译期把组件翻译成 JS，运行期由 JS 执行逻辑，Flutter 负责原生渲染。包含架构图、能力目录、扩展指南与已知限制。">
-<meta name="author" content="flutter_hot_patch">
+<title>dynamic_flutter · 一份 Flutter 代码，两种执行形态</title>
+<meta name="description" content="dynamic_flutter 技术博客：为 Flutter 装上第二个运行时。编译期把组件翻译成 JS，运行期由 JS 执行逻辑，Flutter 负责原生渲染。包含架构图、能力目录、扩展指南与已知限制。">
+<meta name="author" content="dynamic_flutter">
 <meta name="theme-color" content="#f6f5f2">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flutter_hot_patch · 一份 Flutter 代码，两种执行形态">
+<meta property="og:title" content="dynamic_flutter · 一份 Flutter 代码，两种执行形态">
 <meta property="og:description" content="为 Flutter 装上第二个运行时：编译期把组件翻译成 JS，运行期由 JS 执行逻辑，Flutter 负责原生渲染。">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M18 4 7 19h8l-1 9 11-15h-8l1-9z' fill='white'/%3E%3C/svg%3E">
@@ -779,12 +779,12 @@ td code{font-size:11.5px}
 <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
 
 <aside class="sidebar" id="sidebar" aria-label="文档目录">
-  <a class="brand" href="#home" aria-label="flutter_hot_patch 首页">
+  <a class="brand" href="#home" aria-label="dynamic_flutter 首页">
     <span class="brand-mark" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
     </span>
     <span>
-      <span class="brand-name">flutter_hot_patch</span>
+      <span class="brand-name">dynamic_flutter</span>
       <span class="brand-sub">Framework Notes</span>
     </span>
   </a>
@@ -899,7 +899,7 @@ td code{font-size:11.5px}
           <span class="eyebrow"><span class="pulse"></span>Framework Notes · 2026</span>
           <h1 id="home-title">一份 Flutter 代码<br>两种执行形态：<br><span class="grad">原生或运行时JS。</span></h1>
           <p class="hero-lead">
-            <strong>flutter_hot_patch</strong> 为 Flutter 装上第二个运行时：编译期把组件逐语法翻译成 JS，
+            <strong>dynamic_flutter</strong> 为 Flutter 装上第二个运行时：编译期把组件逐语法翻译成 JS，
             运行期由 JS 接管逻辑与状态，渲染仍走 Flutter 自己的原生管线。同一份代码，
             既能原生运行，也能在运行时被替换——而被替换的，始终是一个完全正常的 Flutter widget。
           </p>
@@ -983,7 +983,7 @@ td code{font-size:11.5px}
 
         <div class="diagram-shell">
           <svg viewBox="0 0 1080 736" role="img" aria-labelledby="archSvgTitle archSvgDesc">
-            <title id="archSvgTitle">flutter_hot_patch 分层架构图</title>
+            <title id="archSvgTitle">dynamic_flutter 分层架构图</title>
             <desc id="archSvgDesc">源层 Dart 源码经 build_runner 进入生成器，产出 runtime.js、flutter.js、组件 JS 与 manifest；JS 运行时由 mini-react、能力库与句柄调度组成；宿主 Flutter 侧由 JsUiWidget、JsUiStore、JsWidgetRegistry 与 JsRuntimeManager 组成。两侧通过 patch ops 与 _app_host_.invoke 通信。</desc>
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -2892,7 +2892,7 @@ bash start_patch_server.sh
 
     <footer class="footer">
       <div>
-        <b>flutter_hot_patch</b> · 为 Flutter 装上第二个运行时<br>
+        <b>dynamic_flutter</b> · 为 Flutter 装上第二个运行时<br>
         文档基于当前工作区 · protocol 0.13.0 · MIT License
       </div>
       <div class="footer-links">

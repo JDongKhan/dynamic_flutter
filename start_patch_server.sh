@@ -54,7 +54,7 @@ echo "[start] patch.zip 大小：$(du -h "$PATCH_DIR/patch.zip" | cut -f1)"
 
 # 同步一份归档到 docs/blog/patch.zip：docs/ 是 GitHub Pages 的发布目录，
 # push 之后 release 包就能从
-#   https://jdongkhan.github.io/flutter_hot_patch/blog/patch.zip
+#   https://jdongkhan.github.io/dynamic_flutter/blog/patch.zip
 # 加载补丁（见 example/lib/base/patch_config.dart 的 release 分支），
 # 别人装包后不需要再自己起本地服务。
 DOC_ZIP="docs/blog/patch.zip"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 构建 release 包并发布到 docs/downloads/：
-#   - Android: flutter_hot_patch-android.apk（arm64 单 ABI）
-#   - macOS:   flutter_hot_patch-macos.zip（ad-hoc 重签，未公证）
+#   - Android: dynamic_flutter-android.apk（arm64 单 ABI）
+#   - macOS:   dynamic_flutter-macos.zip（ad-hoc 重签，未公证）
 #
 # macOS 为什么必须重签：
 #   `flutter build macos` 产出的 app 是 ad-hoc 签名（flags=0x2(adhoc)），但构建
@@ -28,10 +28,10 @@ REPO_ROOT="$(pwd)"
 OUT_DIR="$REPO_ROOT/docs/downloads"
 
 ANDROID_APK_REL="example/build/app/outputs/flutter-apk/app-release.apk"
-ANDROID_OUT="$OUT_DIR/flutter_hot_patch-android.apk"
+ANDROID_OUT="$OUT_DIR/dynamic_flutter-android.apk"
 
 MAC_APP_REL="example/build/macos/Build/Products/Release/flutter_hot.app"
-MAC_OUT="$OUT_DIR/flutter_hot_patch-macos.zip"
+MAC_OUT="$OUT_DIR/dynamic_flutter-macos.zip"
 
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
